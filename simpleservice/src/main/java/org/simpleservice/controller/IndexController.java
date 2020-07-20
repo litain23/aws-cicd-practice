@@ -10,5 +10,4 @@ public class IndexController {
     public String index() {
         return "Hello this is index page";
     }
-
 }
