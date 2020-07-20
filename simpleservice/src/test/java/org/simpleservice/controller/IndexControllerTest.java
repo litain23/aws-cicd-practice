@@ -20,13 +20,13 @@ public class IndexControllerTest {
 
     @Test
     public void indexTest() throws Exception {
-        String uri = "/index";
+        String uri = "/";
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(uri)
                 .accept(MediaType.APPLICATION_JSON_VALUE)).andReturn();
 
         int status = mvcResult.getResponse().getStatus();
         assertEquals(200, status);
         String content = mvcResult.getResponse().getContentAsString();
-        assertEquals(content, "Hello this is index page");
+        assertEquals(content, "Hello new Index page!");
     }
 }
