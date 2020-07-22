@@ -22,12 +22,6 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
+      run: |
         ./gradlew --version
         ./gradlew build
-    - name: call depoloy.. 
-      env: 
-        DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
-        DEPLOY_URL: ${{ secrets.DEPLOY_URL }}
-      run: |
-        curl -X POST -d {"id": "$DEPLOY_KEY"} $DEPLOY_URL       
-        echo
