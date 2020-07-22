@@ -20,11 +20,11 @@ jobs:
       with:
         java-version: 11
     - name: Grant execute permission for gradlew
-      run: chmod +x simpleservice/gradlew
+      run: chmod +x gradlew
     - name: Build with Gradle
       run: |
-        ./simpleservice/gradlew --version
-        ./simpleservice/gradlew build
+        ./gradlew --version
+        ./gradlew build
         ls -R
     - name: Upload S3
       env:
@@ -34,4 +34,4 @@ jobs:
         aws s3 cp \
           --recursive \
           --region ap-northeast-2 \
-          ./simpleservice/build/libs/*.jar s3://r6-project-s3
+          ./ s3://r6-project-s3
