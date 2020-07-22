@@ -25,7 +25,7 @@ jobs:
       run: |
         ./simpleservice/gradlew --version
         ./simpleservice/gradlew build
-        ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/'
+        ls -R
     - name: Upload S3
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_S3_UPLOAD }}
