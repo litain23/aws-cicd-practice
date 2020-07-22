@@ -23,5 +23,5 @@ jobs:
       run: chmod +x simpleservice/gradlew
     - name: Build with Gradle
       run: |
-        ./gradlew --version
-        ./gradlew build
+        ./simpleservice/gradlew --version
+        ./simpleservice/gradlew build
