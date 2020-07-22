@@ -34,4 +34,4 @@ jobs:
         aws s3 cp \
           --recursive \
           --region ap-northeast-2 \
-          ./simpleservice/build/lib/*.jar s3://r6-project-s3
+          ./simpleservice/build/libs/*.jar s3://r6-project-s3
