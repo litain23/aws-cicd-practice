@@ -28,7 +28,7 @@ jobs:
     - name: Upload S3
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_S3_UPLOAD }}
-        AWS_SECRET_ACCESS_KEY: ${{ secret.AWS_S3_UPLOAD_KEY }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_S3_UPLOAD_KEY }}
       run: |
         aws s3 cp \
           -- recursive \
