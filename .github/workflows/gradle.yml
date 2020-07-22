@@ -31,6 +31,6 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_S3_UPLOAD_KEY }}
       run: |
         aws s3 cp \
-          -- recursive \
+          --recursive \
           --region ap-northeast-2 \
           ./simpleservice/build/*.jar s3://r6-project-s3
