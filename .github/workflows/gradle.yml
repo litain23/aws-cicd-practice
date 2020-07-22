@@ -25,3 +25,12 @@ jobs:
       run: |
         ./simpleservice/gradlew --version
         ./simpleservice/gradlew build
+    - name: Upload S3
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_S3_UPLOAD }}
+        AWS_SECRET_ACCESS_KEY: ${{ secret.AWS_S3_UPLOAD_KEY }}
+      run: |
+        aws s3 cp \
+          -- recursive \
+          --region ap-northeast-2 \
+          ./simpleservice/build/*.jar s3://r6-project-s3

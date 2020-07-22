@@ -1,0 +1,4 @@
+simpleservice/.gradle
+simpleservice/build/
+simpleservice/!gradle-wrapper.jar
+simpleservice/.idea
