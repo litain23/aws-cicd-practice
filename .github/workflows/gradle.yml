@@ -31,9 +31,7 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_S3_UPLOAD }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_S3_UPLOAD_KEY }}
       run: |
-        ls -R
-        ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/'
         aws s3 cp \
           --recursive \
           --region ap-northeast-2 \
-          ./simpleservice/build/*.jar s3://r6-project-s3
+          ./simpleservice/lib/build/*.jar s3://r6-project-s3
