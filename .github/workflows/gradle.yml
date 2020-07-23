@@ -25,7 +25,9 @@ jobs:
       run: |
         ./gradlew --version
         ./gradlew build
-        ls -R
+    - name: makeZipFile
+      run: |
+        zip buildfile.zip ./deploy.sh ./appspec.yml ./build/libs/simpleservice*.jar
     - name: Upload S3
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_S3_UPLOAD }}
@@ -34,4 +36,4 @@ jobs:
         aws s3 cp \
           --recursive \
           --region ap-northeast-2 \
-          ./ s3://r6-project-s3
+          ./buildfile.zip s3://r6-project-s3
