@@ -37,4 +37,4 @@ jobs:
         aws s3 cp \
           --recursive \
           --region ap-northeast-2 \
-          ./buildfile.zip s3://r6-project-s3
+          buildfile.zip s3://r6-project-s3
