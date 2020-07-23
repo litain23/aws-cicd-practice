@@ -35,6 +35,5 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_S3_UPLOAD_KEY }}
       run: |
         aws s3 cp \
-          --recursive \
           --region ap-northeast-2 \
           buildfile.zip s3://r6-project-s3
