@@ -32,6 +32,6 @@ jobs:
       run: |
         aws s3 cp \
           --region ap-northeast-2 \
-          ./build/lib/*.jar s3://r6-project-s3
+          ./build/libs/*.jar s3://r6-project-s3
 
     
