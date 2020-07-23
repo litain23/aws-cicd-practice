@@ -8,6 +8,6 @@ public class IndexController {
 
     @GetMapping("/")
     public String index() {
-        return "Hello new Index page!";
+        return "This is index from gitaction";
     }
 }
